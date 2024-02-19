@@ -22,27 +22,29 @@ export default async function Home() {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:h-98">
       <div className="grid grid-rows-1 gap-4 md:grid-rows-2">
-        <Link href={`/article/${secondItem._id}`}>
+        <Link href={`/article/${secondItem._id.toString()}`}>
           <div className="rounded-md border-2 h-48">
             <ArticleCard src={secondItem.image} title={secondItem.title} />
           </div>
         </Link>
-        <div className="rounded-md border-2 h-48">
-          <ArticleCard src={fifthItem.image} title={fifthItem.title} />
-        </div>
+        <Link href={`/article/${fifthItem._id.toString()}`}>
+          <div className="rounded-md border-2 h-48">
+            <ArticleCard src={fifthItem.image} title={fifthItem.title} />
+          </div>
+        </Link>
       </div>
-      <Link href={`/article/${firstItem._id}`}>
+      <Link href={`/article/${firstItem._id.toString()}`}>
         <div className="rounded-md border-2 h-48 md:h-full">
           <ArticleCard src={firstItem.image} title={firstItem.title} />
         </div>
       </Link>
       <div className="grid grid-rows-1 gap-4 md:grid-rows-2">
-        <Link href={`/article/${thirdItem._id}`}>
+        <Link href={`/article/${thirdItem._id.toString()}`}>
           <div className="rounded-md border-2 h-48">
             <ArticleCard src={thirdItem.image} title={thirdItem.title} />
           </div>
         </Link>
-        <Link href={`/article/${fourthItem._id}`}>
+        <Link href={`/article/${fourthItem._id.toString()}`}>
           <div className="rounded-md border-2 h-48">
             <ArticleCard src={fourthItem.image} title={fourthItem.title} />
           </div>

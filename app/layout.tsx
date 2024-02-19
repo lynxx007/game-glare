@@ -78,7 +78,7 @@ export default function RootLayout({
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" size={"icon"} className="md:hidden">
+                <Button size={"icon"} className="md:hidden">
                   <IoMenu size={24} />
                 </Button>
               </DialogTrigger>
@@ -168,7 +168,7 @@ export default function RootLayout({
           <header className="h-16 px-4 border-b-2 py-4 hidden items-center justify-center  md:flex">
             <SecondHeader />
           </header>
-          <main className="container mx-auto h-screen py-8">{children}</main>
+          <main className="container mx-auto h-full py-8">{children}</main>
         </ThemeProvider>
       </body>
     </html>

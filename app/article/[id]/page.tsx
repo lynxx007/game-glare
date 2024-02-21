@@ -3,7 +3,26 @@ import { ObjectId } from "mongodb";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import fs from "fs";
-export default async function Page({ params }: { params: { id: string } }) {
+import { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const db = mongodb.db(process.env.DB_NAME);
+  const data = await db
+    .collection("articles")
+    .findOne({ _id: new ObjectId(params.id) });
+  return {
+    title: data?.title,
+  };
+}
+export default async function Page({ params, searchParams }: Props) {
   try {
     const db = mongodb.db(process.env.DB_NAME);
     const data = await db

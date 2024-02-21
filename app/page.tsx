@@ -1,5 +1,6 @@
 import { ArticleCard } from "@/components/article-card";
 import { mongodb } from "@/lib/mongodb";
+import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 async function getData() {
@@ -50,6 +51,7 @@ export default async function Home() {
           </div>
         </Link>
       </div>
+      <UserButton />
     </div>
   );
 }

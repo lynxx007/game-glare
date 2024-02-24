@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/select";
 import { SecondHeader } from "@/components/navigationHeader";
 import { ClerkProvider } from "@clerk/nextjs";
+import LoginRegisLinks from "@/components/loginRegisLinks";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -156,14 +157,7 @@ export default function RootLayout({
               </Dialog>
 
               <div className="hidden space-x-4 md:flex">
-                <Link href="/auth/login">
-                  <p className="text-lg font-bold font-mono text-red-500">
-                    Login
-                  </p>
-                </Link>
-                <Link href="/auth/register">
-                  <p className="text-lg font-bold font-mono">Register</p>
-                </Link>
+                <LoginRegisLinks />
               </div>
             </header>
             <header className="h-16 px-4 border-b-2 py-4 hidden items-center justify-center  md:flex">

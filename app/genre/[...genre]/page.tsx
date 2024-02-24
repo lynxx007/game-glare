@@ -1,3 +1,4 @@
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { mongodb } from "@/lib/mongodb";
 import Image from "next/image";
 
@@ -30,8 +31,8 @@ export default async function Genre({
               alt={article.title}
             />
             <div className="p-4 flex-1">
-              <h1 className="text-xl font-bold">{article.title}</h1>
-              <p className="text-sm p-2">
+              <h1 className="text-sm font-bold md:text-xl">{article.title}</h1>
+              <p className="text-sm p-2 invisible md:visible">
                 {article.text.slice(0, showCharacters)}...
               </p>
             </div>

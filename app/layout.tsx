@@ -28,6 +28,7 @@ import {
 import { SecondHeader } from "@/components/navigationHeader";
 import { ClerkProvider } from "@clerk/nextjs";
 import LoginRegisLinks from "@/components/loginRegisLinks";
+import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -142,16 +143,7 @@ export default function RootLayout({
                       </p>
                     </Link>
 
-                    <Link href="/auth/login">
-                      <p className="text-lg font-bold font-mono text-red-500 text-center">
-                        Login
-                      </p>
-                    </Link>
-                    <Link href="/auth/register">
-                      <p className="text-lg font-bold font-mono text-center">
-                        Register
-                      </p>
-                    </Link>
+                    <LoginRegisLinks />
                   </div>
                 </DialogContent>
               </Dialog>
@@ -164,6 +156,7 @@ export default function RootLayout({
               <SecondHeader />
             </header>
             <main className="container mx-auto h-full py-8">{children}</main>
+            <Footer />
           </ThemeProvider>
         </body>
       </html>

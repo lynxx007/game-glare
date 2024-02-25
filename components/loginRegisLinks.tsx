@@ -14,10 +14,12 @@ export default function LoginRegisLinks() {
       ) : (
         <>
           <Link href="/auth/login">
-            <p className="text-lg font-bold font-mono text-red-500">Login</p>
+            <p className="text-lg font-bold font-mono text-red-500 text-center">
+              Login
+            </p>
           </Link>
           <Link href="/auth/register">
-            <p className="text-lg font-bold font-mono">Register</p>
+            <p className="text-lg font-bold font-mon text-center">Register</p>
           </Link>
         </>
       )}

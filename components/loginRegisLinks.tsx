@@ -8,7 +8,7 @@ export default function LoginRegisLinks() {
   return (
     <>
       {isLoaded && userId ? (
-        <div className="px-8">
+        <div className="px-8 invisible md:visible">
           <UserButton showName afterSignOutUrl="/" />
         </div>
       ) : (
